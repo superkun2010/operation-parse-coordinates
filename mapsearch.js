@@ -1,5 +1,6 @@
 
-var originalMap = "╔══════════╗\n║**********║\n║**********║\n║****X*****║\n║**********║\n║**********║\n╚══════════╝";
+var fs = require("fs");
+var originalMap = fs.readFileSync("data/map-08.txt").toString();
 var mapArray = originalMap.split("\n");
 var	colCounter = 0;
 var yAxis = 0;
@@ -29,7 +30,7 @@ while (xAxis == -1) {
 	xAxis = mapArray[yAxis].indexOf("X");
 }
 
-
-console.log (originalMap);
-console.log (mapArray);
-console.log ("[",xAxis-1,", ", -yAxis, "]");
+//As a check to see original map and the one built with the full Array
+//console.log (originalMap);
+//console.log (mapArray);
+console.log ("[",xAxis-1,", ", -(yAxis-1), "]");
